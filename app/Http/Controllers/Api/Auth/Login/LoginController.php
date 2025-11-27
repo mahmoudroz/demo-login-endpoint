@@ -24,7 +24,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (!$token = $this->loginService->login($credentials)) {
-           return $this-> error(__('api.Information Error'));
+            return $this->error(__('api.Information Error'));
         }
 
         return $this->success(

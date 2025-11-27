@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Services\Login;
+
 use App\Interfaces\Login\LoginInterface;
 
 class LoginService implements LoginInterface
@@ -13,4 +15,3 @@ class LoginService implements LoginInterface
         return $token;
     }
 }
-?>

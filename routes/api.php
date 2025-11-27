@@ -8,12 +8,11 @@ Route::group(['middleware' => [ChangeLanguage::class]], function () {
 
     ################################ START AUTHENTICATION ###################################
     Route::group(['prefix' => 'auth', 'namespace' => 'Authentication'], function () {
-    ######################## START LOGIN ########################
-        Route::group(['prefix' => 'login' , 'namespace' => 'Login'], function () {
-            Route::post('', [ LoginController::class, 'login'])->middleware('throttle:25,1');
-           });
-    ######################## END LOGIN ########################
+        ######################## START LOGIN ########################
+        Route::group(['prefix' => 'login', 'namespace' => 'Login'], function () {
+            Route::post('', [LoginController::class, 'login'])->middleware('throttle:25,1');
+        });
+        ######################## END LOGIN ########################
     });
     ################################ END AUTHENTICATION ###################################
 });
-
